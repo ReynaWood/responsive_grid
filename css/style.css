@@ -1,117 +1,168 @@
-/****** Let's style our h1 & h2 headings *******/
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: #737373;
+  font-size: 18px;
+  line-height: 1.15;
+  margin: 0;
+  padding: 0;
+}
 
 
-/* 1. Make the text centered */
+.overview{
+  background-attachment: fixed; /* Parallax effect */     
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 400px;                /* Parallax effect */
+}
 
-/* 2. Give it a margin of 10px */
 
-/* 3. Font size should be twice the normal size  */
-
-h1, h2{
+.overview p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
   text-align: center;
-  margin: 10px;
-  font-size: 200%;
 }
 
-
-
-
-
-
-
-  /******* style the grid container  *******/
-
-  /* 1. Give it a width of 800px */
-
-  /* 2. Center it in the middle of the body */
-
-  /* 3. Set the display to grid */
-
-  /* 4. Give it 3 columns of equal size (1fr each) */
-
-  /* 5. Set a g rid gap of 10px */
-
-  /* 6. Add a background color of #91f321 */
-
-  /* 7. Give it a background image using the image in the images folder */
-
-  /* 8. Add a solid black 3px border */
-
-  /* 9. Round the corners */
-
-
-.grid{
-  width: 800px;
-  display: grid;
-  margin: auto;
-  background-color: #91f321;
-  background-image:url("../images/background.jpg");
-  border: 3px solid black;
-  grid-gap: 10px;
-  border-radius: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-
-
-
-
-
-
-
-/******  Style the divs inside of the grid ******/
-
-/* 1. Give them a 5px solid white border */
-
-/* 2. Give them a background color of rgba(231, 157, 224, 0.5) */
-
-/* 3.  Align the text in the boxes to the center;
-
-/* 4. Add 20px of padding */
-
-/* 5. Set a font-size of 30px   */
-
-.grid div{
-  border: 5px solid white;
-  background-color: rgba(231, 157, 224, 0.5);
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
   text-align: center;
-  padding: 20px;
-  font-size: 30px;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav li{
+  display:inline;
+  padding-right:20px;
+
+}
+
+nav a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none; 
+}
+
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+
+nav{
+  background-color: #ddd;
+  padding: 25px 0; 
+  text-align: left;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding-top: 30px;
+  text-align: center;
+}
+
+
+.text-block{
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
+}
+
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  .skip a{
+    -webkit-transition: none; /* sets to default setting */
+    transition: none;        /* sets to default setting */
+   }
+
+  /*Turn off parallax*/
+  header{
+    background-attachment: initial;
+  }
 }
 
 
 
+/*Your Code Here*/
+/* PLEASE DO NOT REMOVE MY COMMENTS.  THEY HELP US HELP YOU DEBUG. */
 
+/* Step 1: Write selector/rule property to add an underline when
+links in the navigation are in the hover or focus state.*/
 
-
-/* Go back to the parent container and play with ...*/
-    /*justify-content:; */
-	/* justify-items:;  */
-	/* align-items:; */
-	/* align-content:; */
-
-
-/* Now try and style the individual boxes using grid-column  to match the picture at 1200px.*/
-
-.item2, .item5{
-	grid-column-start: 3;
-}
-
-.item3{
-	grid-column-start: 2;
-}
-
-.item4{
-	grid-column-start: 1;
+nav > a:hover{
+  text-decoration: underline;
 }
 
 
-.item_a{
-	grid-column-start: 3;
-	grid-row-start: 3;
+/* Step 2a: Write selector/rule property to position the default position for the skip class element*/
 
+.skip{
+  margin-top: -40px;
 }
-.item_b{
-	grid-column-start: 3;
 
+
+/* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
+
+.skip:focus{
+  margin-top: 20px;
 }
+
+
+/* Step 3: Write selector/rule property to style all elements when in focus*/
+
+:focus {
+  border: 2px solid black;
+}
+
+/* Step 4: Write selector/rule property to style the container */
+
+.container{
+  grid-template-columns: 1fr, 5fr, 1fr;
+  grid-gap: 15px;
+}
+
+/* Step 5: Write selector/rule property to add the background image to the 
+first div in the grid  and place it in the grid. */
+
+
+
+/* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
+ four rows in the grid. */
+
+      /*This will be a lot of rules.... but be strategic and combine seletors*/
+
+
+ /* Step 8: Write the selector/rule property to style the .text-block class. */
+
+
+/* Add your media query here */
+
+
+  /* Step 9: Write the selector/rule property to style the nav element */
+
+ 
+  /* Step 10: Write the selector/rule property to update the .container class */
+
+
+  /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
+
+
